@@ -1,3 +1,5 @@
+import nltk
+nltk.download('stopwords')
 import streamlit as st
 import pickle
 import re
@@ -5,8 +7,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import string
-import nltk
-nltk.download('stopwords')
+
 # Load the trained model and preprocessing objects
 @st.cache_resource
 def load_model_and_objects():
