@@ -1,9 +1,11 @@
 import nltk
-nltk.download('stopwords')
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 import streamlit as st
 import pickle
 import re
-import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import string
@@ -12,15 +14,15 @@ import string
 @st.cache_resource
 def load_model_and_objects():
     # Load the CountVectorizer
-    with open('Models/countVectorizer.pkl', 'rb') as file:
+    with open('countVectorizer.pkl', 'rb') as file:
         cv = pickle.load(file)
     
     # Load the MinMaxScaler
-    with open('Models/scaler.pkl', 'rb') as file:
+    with open('scaler.pkl', 'rb') as file:
         scaler = pickle.load(file)
     
     # Load the Random Forest model
-    with open('Models/random_forest_model.pkl', 'rb') as file:
+    with open('random_forest_model.pkl', 'rb') as file:
         model = pickle.load(file)
     
     return cv, scaler, model
