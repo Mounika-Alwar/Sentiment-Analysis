@@ -13,7 +13,6 @@ This project analyzes Amazon Alexa reviews to understand customer sentiment, pre
 - Scikit-learn
 
 ## Analysis
-Data Preprocessing
 - Loaded the Amazon Alexa reviews dataset.
 - Performed data cleaning and preprocessing, including removing non-alphabetic characters, converting to lowercase, and stemming.
 
